@@ -1,4 +1,5 @@
-// pages/draw/draw.js
+var app = getApp();
+var util = require('../../utils/util.js');
 Page({
 
   /**

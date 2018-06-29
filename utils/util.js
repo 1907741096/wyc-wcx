@@ -14,6 +14,29 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+function http(url, callBack, method, data) {
+  var that = this;
+  wx.request({
+    url: url,
+    data: data,
+    method: method,
+    header: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    }, // 设置请求的 header
+    success: function (res) {
+      callBack(res.data);
+      // success
+    },
+    fail: function (res) {
+      // fail
+    },
+    complete: function (res) {
+      // complete
+    }
+  })
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  http: http,
 }
