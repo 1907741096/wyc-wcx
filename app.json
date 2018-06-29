@@ -2,34 +2,37 @@
   "pages": [
     "pages/index/index",
     "pages/draw/draw",
-    "pages/info/info"
+    "pages/love/love"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarBackgroundColor": "#fdf6f9",
+    "navigationBarTitleText": "小肠的手书大业",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "selectedColor": "#333333",
+    "color": "#faa8ce",
+    "selectedColor": "#fa4598",
+    "backgroundColor": "#fdf6f9",
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/draw/draw",
         "text": "手书",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "iconPath": "images/icons/draw.png",
+        "selectedIconPath": "images/icons/selectedDraw.png"
       },
       {
         "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "text": "萌宠",
+        "iconPath": "images/icons/cat.png",
+        "selectedIconPath": "images/icons/selectedCat.png"
       },
       {
-        "pagePath": "pages/info/info",
-        "text": "我的",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "pagePath": "pages/love/love",
+        "text": "汪！",
+        "iconPath": "images/icons/love.png",
+        "selectedIconPath": "images/icons/selectedLove.png"
       }
     ]
   }

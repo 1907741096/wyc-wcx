@@ -1,4 +1,4 @@
-// pages/info/info.js
+// pages/love/love.js
 Page({
 
   /**
