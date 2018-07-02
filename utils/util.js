@@ -36,6 +36,7 @@ function http(url, callBack, method, data) {
   })
 }
 
+
 module.exports = {
   formatTime: formatTime,
   http: http,
