@@ -1,1 +1,3 @@
-/* pages/love/love.wxss */
+page {
+  background-color: #faeef4;
+}

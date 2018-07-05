@@ -1,19 +1,22 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/draw/draw",
+    "pages/index/index",
+   
     "pages/love/love"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fdf6f9",
+    "navigationBarBackgroundColor": "#faeef4",
     "navigationBarTitleText": "小肠的手书大业",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "backgroundColorTop": "#faeef4",
+    "backgroundColorBottom": "#faeef4"
   },
   "tabBar": {
     "color": "#faa8ce",
     "selectedColor": "#fa4598",
-    "backgroundColor": "#fdf6f9",
+    "backgroundColor": "#faeef4",
     "borderStyle": "white",
     "list": [
       {

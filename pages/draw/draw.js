@@ -6,14 +6,36 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    images: [],
+    imgUrl: [
+      'https://www.wzyhome.date/test/1.jpg',
+      'https://www.wzyhome.date/test/2.jpg',
+      'https://www.wzyhome.date/test/3.jpg',
+      'https://www.wzyhome.date/test/4.jpg'
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var images = [];
+    images.push({
+      'address':'https://www.wzyhome.date/test/1.jpg',
+    });
+    images.push({
+      'address': 'https://www.wzyhome.date/test/2.jpg',
+    });
+    images.push({
+      'address': 'https://www.wzyhome.date/test/3.jpg',
+    });
+    images.push({
+      'address': 'https://www.wzyhome.date/test/4.jpg',
+    });
+
+    this.setData({
+      images:images
+    });
   },
 
   /**
@@ -55,7 +77,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    
   },
 
   /**
@@ -63,5 +85,14 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  //查看图片
+  viewImg: function(event) {
+    var src = event.currentTarget.dataset.src;
+    wx.previewImage({
+      current: src,//当前显示图片的http链接
+      urls: this.data.imgUrl//需要预览的图片http链接列表
+    })
   }
 })

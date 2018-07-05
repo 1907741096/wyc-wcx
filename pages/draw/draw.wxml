@@ -1,1 +1,2 @@
-手书
+<import src="/pages/template/template-list/template-list.wxml" />
+<template is="listTemplate" data="{{images}}" />

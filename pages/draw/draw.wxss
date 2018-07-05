@@ -1,1 +1,5 @@
-/* pages/draw/draw.wxss */
+@import "/pages/template/template-list/template-list.wxss";
+
+page {
+  background-color: #faeef4;
+}
