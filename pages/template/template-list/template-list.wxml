@@ -1,0 +1,6 @@
+<import src="/pages/template/template-image/template-image.wxml" />
+<template name="listTemplate">
+  <block wx:for="{{images}}" wx:for-item="image">
+    <template is="imageTemplate" data="{{...image}}" />
+  </block>
+</template>

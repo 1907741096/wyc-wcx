@@ -8,34 +8,30 @@ Page({
   data: {
     images: [],
     imgUrl: [
-      'https://www.wzyhome.date/test/1.jpg',
-      'https://www.wzyhome.date/test/2.jpg',
-      'https://www.wzyhome.date/test/3.jpg',
-      'https://www.wzyhome.date/test/4.jpg'
-    ]
+      
+    ],
+    offset: 0,
+    limit: 10
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var images = [];
-    images.push({
-      'address':'https://www.wzyhome.date/test/1.jpg',
-    });
-    images.push({
-      'address': 'https://www.wzyhome.date/test/2.jpg',
-    });
-    images.push({
-      'address': 'https://www.wzyhome.date/test/3.jpg',
-    });
-    images.push({
-      'address': 'https://www.wzyhome.date/test/4.jpg',
-    });
+    var url = '/api/content/get-content?offset=' + this.data.offset + '&limit=' + this.data.limit;
+    util.http(url, this.processImages);
+  },
 
+  /**
+   * 处理数据
+   */
+  processImages: function (result) {
+    var images = result.data
     this.setData({
-      images:images
+      offset: this.data.offset + this.data.limit,
+      images: this.data.images.concat(images)
     });
+    wx.hideNavigationBarLoading();
   },
 
   /**
@@ -70,14 +66,22 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    wx.showNavigationBarLoading();
+    this.setData({
+      offset: 0,
+      images: []
+    });
+    var url = '/api/content/get-content?offset=' + this.data.offset + '&limit=' + this.data.limit;
+    util.http(url, this.processImages);
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    
+    wx.showNavigationBarLoading();
+    var url = '/api/content/get-content?offset=' + this.data.offset + '&limit=' + this.data.limit;
+    util.http(url, this.processImages);
   },
 
   /**

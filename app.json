@@ -2,7 +2,6 @@
   "pages": [
     "pages/draw/draw",
     "pages/index/index",
-   
     "pages/love/love"
   ],
   "window": {

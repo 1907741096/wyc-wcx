@@ -1,3 +1,4 @@
+var app = getApp();
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -14,8 +15,9 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-function http(url, callBack, method, data) {
+function http(url, callBack, method = 'get', data = []) {
   var that = this;
+  url = app.globalData.http + url;
   wx.request({
     url: url,
     data: data,

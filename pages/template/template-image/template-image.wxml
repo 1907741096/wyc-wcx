@@ -1,0 +1,5 @@
+<template name="imageTemplate">
+  <view class="image">
+    <image src='{{address}}' class='image-src' catchtap="viewImg" data-src='{{address}}'></image>
+  </view>
+</template>
